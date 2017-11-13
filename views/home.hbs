@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>{{pageTitle}}</title>
+  </head>
+  <body>
+    {{> header}}
+    <!-- scream it is helper function which took message
+    paramater and passed it to screamIt helper function
+    which returned capatalized text -->
+    <p> {{screamIt message}}</p>
+    {{> footer}}
+  </body>
+</html>
