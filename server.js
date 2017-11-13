@@ -2,6 +2,14 @@
 const express = require('express');
 const fs = require('fs');
 const hbs = require('hbs');
+//this will be set heroku
+//process.env stores all environment variables
+// in key value pairs;\ it will get port from heroku
+//if running locally it will be set to 3000 to run
+//it locally;
+
+const port =process.env.PORT || 3000;
+
 var app = express();
 //partials are partial page tages which can b dynamically rendered
 hbs.registerPartials(__dirname +'/views/partials');
@@ -59,6 +67,8 @@ app.get('/bad',(request,response)=>{
     errorMessage : 'Unable to connect'
   });
 });
-app.listen(3000,()=>{
-  console.log('server is up and running on port 3000');
+//make it dynamic for heroku
+
+app.listen(port,()=>{
+  console.log(`server is up and running on port ${port}`);
 });
