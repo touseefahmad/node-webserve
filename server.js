@@ -56,6 +56,11 @@ app.get('/',(request,response)=>{
 //   likes : [ 'biking','cities']
 // });
 });
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs',{
+    pageTitle: 'Projects'
+  });
+});
 app.get('/about',(request,response)=>{
   response.render('about.hbs',{
     pageTitle : 'About Page'
